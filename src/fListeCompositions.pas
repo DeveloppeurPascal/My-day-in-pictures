@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes,
   System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Objects, FMX.Layouts;
+  FMX.Objects, FMX.Layouts, FMX.Controls.Presentation, Olf.FMX.AboutDialog;
 
 type
   TfrmListeCompositions = class(TFrame)
@@ -16,10 +16,15 @@ type
     infoChargementSuite: TAniIndicator;
     background: TRectangle;
     btnAddCompo: TLayout;
+    ToolBar1: TToolBar;
+    btnAbout: TButton;
+    OlfAboutDialog1: TOlfAboutDialog;
     procedure VertScrollBox1ViewportPositionChange(Sender: TObject;
       const OldViewportPosition, NewViewportPosition: TPointF;
       const ContentSizeChanged: Boolean);
     procedure btnAddCompoClick(Sender: TObject);
+    procedure btnAboutClick(Sender: TObject);
+    procedure OlfAboutDialog1URLClick(const AURL: string);
   private
     { Déclarations privées }
     procedure PhotoClic(Sender: TObject);
@@ -60,6 +65,11 @@ begin
       img.TagString));
   finally
   end;
+end;
+
+procedure TfrmListeCompositions.btnAboutClick(Sender: TObject);
+begin
+  OlfAboutDialog1.execute;
 end;
 
 procedure TfrmListeCompositions.btnAddCompoClick(Sender: TObject);
@@ -127,6 +137,11 @@ begin
   infoChargementSuite.Visible := true;
   infoChargementSuite.Enabled := true;
   chargePhotosSuivantes;
+end;
+
+procedure TfrmListeCompositions.OlfAboutDialog1URLClick(const AURL: string);
+begin
+  url_Open_In_Browser(AURL);
 end;
 
 procedure TfrmListeCompositions.PhotoClic(Sender: TObject);

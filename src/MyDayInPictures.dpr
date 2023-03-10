@@ -9,7 +9,9 @@ uses
   uConfig in 'uConfig.pas',
   fAjoutCompo in 'fAjoutCompo.pas' {frmAjoutCompo: TFrame},
   UUtils in 'UUtils.pas',
-  u_urlOpen in '..\lib-externes\librairies\u_urlOpen.pas';
+  u_urlOpen in '..\lib-externes\librairies\u_urlOpen.pas',
+  Olf.FMX.AboutDialog in '..\lib-externes\AboutDialog-Delphi-Component\sources\Olf.FMX.AboutDialog.pas',
+  Olf.FMX.AboutDialogForm in '..\lib-externes\AboutDialog-Delphi-Component\sources\Olf.FMX.AboutDialogForm.pas' {OlfAboutDialogForm};
 
 {$R *.res}
 
