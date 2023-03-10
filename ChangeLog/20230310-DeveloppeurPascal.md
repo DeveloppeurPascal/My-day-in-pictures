@@ -22,3 +22,6 @@
 * ajout d'une boite de dialogue "à propos" sur l'écran d'accueil au dessus de la liste d'images
 * déploiement du logiciel pour Windows 32/64 bits
 * envoi des codes sources et ouverture d'une release sur GitHub
+
+* correction du passage de paramètres nécessaires à la demande de permission sur ndroid pour accéder à la galerie de photos (changement lié à Delphi 11 Alexandria)
+* bogue : plantage au niveau du traitement de la souris quand on clique sur la disquette pour enregistrer la composition, mais fait le traitement quand même (cf capture écran IDE = Mac avec erreur hors DEBUG) <= des DisposeOf qui supprimaient la frame alors qu'on était dans son code remplacés par des Self.Free différés

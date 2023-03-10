@@ -9,8 +9,6 @@
 
 * bogue : sur Mac aucune image n'est affichée quand on en sélectionne une, mais il l'enregistre quand même si on choisit de le faire avec la disquette => problème au niveau du TImageViewer ?
 
-* bogue : plantage au niveau du traitement de la souris quand on clique sur la disquette pour enregistrer la composition, mais fait le traitement quand même (cf capture écran IDE = Mac avec erreur hors DEBUG)
-
 * mettre à jour les informations de déploiement (Android notamment)
 
 * pour iOS et Android, gérer le partage de l'image sélectionnée plutôt que l'ouvrir par défaut comme sous windows/Mac/linux

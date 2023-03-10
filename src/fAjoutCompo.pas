@@ -109,7 +109,11 @@ end;
 
 procedure TfrmAjoutCompo.btnBackClick(Sender: TObject);
 begin
-  DisposeOf;
+  tthread.ForceQueue(nil,
+    procedure
+    begin
+      self.Free;
+    end);
 end;
 
 procedure TfrmAjoutCompo.btnEnregistrerClick(Sender: TObject);
@@ -125,7 +129,11 @@ begin
     ImageFinale.Bitmap.SaveToFile(nomFichier);
     if assigned(FAjoutPhotoCallback) then
       FAjoutPhotoCallback(nomFichier);
-    DisposeOf;
+    tthread.ForceQueue(nil,
+      procedure
+      begin
+        self.Free;
+      end);
   end;
 end;
 
@@ -330,10 +338,10 @@ begin
                 if (j > 1) then
                 // deuxième ligne, donc théoriquement 2 x 2 images +1
                 begin
-                  ellipse := TEllipse.Create(Self);
+                  ellipse := TEllipse.Create(self);
                   try
                     bmpscale := scene.GetSceneScale;
-                    ellipse.parent := Self;
+                    ellipse.parent := self;
                     ellipse.Width := w / bmpscale;
                     ellipse.Height := h / bmpscale;
                     ellipse.Fill.Kind := tbrushkind.Bitmap;
