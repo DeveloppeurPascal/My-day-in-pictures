@@ -16,7 +16,8 @@ To download this project you better should use "git" command but you also can do
 
 This project depends on :
 
-* none
+* [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies) must be in sub folder ./lib-externes/librairies
+* [DeveloppeurPascal/AboutDialog-Delphi-Component](https://github.com/DeveloppeurPascal/AboutDialog-Delphi-Component) must be in sub folder ./lib-externes/AboutDialog-Delphi-Component
 
 ## How to ask a new feature, report a bug or a security issue ?
 
