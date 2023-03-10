@@ -8,7 +8,8 @@ uses
   fListeCompositions in 'fListeCompositions.pas' {frmListeCompositions: TFrame},
   uConfig in 'uConfig.pas',
   fAjoutCompo in 'fAjoutCompo.pas' {frmAjoutCompo: TFrame},
-  UUtils in 'UUtils.pas';
+  UUtils in 'UUtils.pas',
+  u_urlOpen in '..\lib-externes\librairies\u_urlOpen.pas';
 
 {$R *.res}
 

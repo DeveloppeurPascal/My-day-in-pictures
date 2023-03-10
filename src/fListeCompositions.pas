@@ -35,7 +35,7 @@ implementation
 
 {$R *.fmx}
 
-uses uSVG, uConfig, System.IOUtils, fAjoutCompo;
+uses uSVG, uConfig, System.IOUtils, fAjoutCompo, u_urlOpen;
 
 { TfrmListeCompositions }
 
@@ -132,7 +132,8 @@ end;
 procedure TfrmListeCompositions.PhotoClic(Sender: TObject);
 begin
   if Sender is timage then
-    showmessage((Sender as timage).TagString);
+    url_Open_In_Browser((Sender as timage).TagString);
+  // Add share sheet action depending if it's available or not
 end;
 
 procedure TfrmListeCompositions.VertScrollBox1ViewportPositionChange
