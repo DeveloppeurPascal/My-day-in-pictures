@@ -87,8 +87,8 @@ var
 begin
 {$IF Defined(IOS) or Defined(Android)}
   PermissionsService.RequestPermissions([PermissionReadExternalStorage],
-    procedure(const APermissions: TArray<string>;
-      const AGrantResults: TArray<TPermissionStatus>)
+    procedure(const APermissions: TClassicStringDynArray;
+      const AGrantResults: TClassicPermissionStatusDynArray)
     begin
       if (Length(AGrantResults) = 1) and
         (AGrantResults[0] = TPermissionStatus.Granted) then
