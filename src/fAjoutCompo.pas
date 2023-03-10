@@ -13,19 +13,19 @@ uses
 type
   TfrmAjoutCompo = class(TFrame)
     background: TRectangle;
-    btnBack: TPath;
+    btnBackImg: TPath;
     Layout1: TLayout;
-    btnBackClickZone: TLayout;
-    btnAjoutPhoto: TPath;
-    btnAjoutPhotoClickZone: TLayout;
+    btnBack: TLayout;
+    btnAjoutPhotoImg: TPath;
+    btnAjoutPhoto: TLayout;
     ActionList1: TActionList;
     TakePhotoFromLibraryAction1: TTakePhotoFromLibraryAction;
     OpenDialog1: TOpenDialog;
     ImageFinale: TImageViewer;
-    btnEnregistrer: TPath;
-    btnEnregistrerClickZone: TLayout;
-    btnRetraitPhoto: TPath;
-    btnRetraitPhotoClickZone: TLayout;
+    btnEnregistrerImg: TPath;
+    btnEnregistrer: TLayout;
+    btnRetraitPhotoImg: TPath;
+    btnRetraitPhoto: TLayout;
     procedure btnBackClick(Sender: TObject);
     procedure btnAjoutPhotoClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
@@ -35,7 +35,7 @@ type
     { Déclarations privées }
     ListeImages: TObjectList<TBitmap>;
     FAjoutPhotoCallback: TProc<string>;
-    procedure ajouteImage(Image: TBitmap);
+    procedure ajouteImage(ABitmap: TBitmap);
     procedure rafraichiImageFinale;
   public
     { Déclarations publiques }
@@ -52,9 +52,9 @@ uses uSVG, System.IOUtils, System.Permissions, FMX.DialogService, uConfig,
 
 { TfrmAjoutCompo }
 
-procedure TfrmAjoutCompo.ajouteImage(Image: TBitmap);
+procedure TfrmAjoutCompo.ajouteImage(ABitmap: TBitmap);
 begin
-  ListeImages.Add(Image);
+  ListeImages.Add(ABitmap);
   rafraichiImageFinale;
 end;
 
@@ -136,12 +136,12 @@ begin
     frm.ListeImages := TObjectList<TBitmap>.Create;
     frm.parent := Application.MainForm;
     frm.BringToFront;
-    frm.btnBack.Data.Data := SVG_ArrowLeft;
-    frm.btnAjoutPhoto.Data.Data := SVG_PlusCircleOutline;
+    frm.btnBackImg.Data.Data := SVG_ArrowLeft;
+    frm.btnAjoutPhotoImg.Data.Data := SVG_PlusCircleOutline;
     frm.btnAjoutPhoto.enabled := true;
-    frm.btnRetraitPhoto.Data.Data := SVG_MinusCircleOutline;
+    frm.btnRetraitPhotoImg.Data.Data := SVG_MinusCircleOutline;
     frm.btnRetraitPhoto.enabled := false;
-    frm.btnEnregistrer.Data.Data := SVG_Save;
+    frm.btnEnregistrerImg.Data.Data := SVG_Save;
     frm.btnEnregistrer.enabled := false;
     frm.FAjoutPhotoCallback := AjoutPhotoCallback;
   except
@@ -167,40 +167,22 @@ begin
   btnEnregistrer.enabled := ListeImages.Count > 0;
   if (ListeImages.Count > 0) then
   begin
-    ImageFinale.Bitmap.SetSize(CLargeur, CHauteur);
-    case ListeImages.Count of
-      1: // une image => redimensionnement pour en prendre une portion
-        begin
-          w := CLargeur; // 1 colonne
-          h := CHauteur; // 1 ligne
-          btm1 := TBitmap.Create(ListeImages[0].Width, ListeImages[0].Height);
-          try
-            btm1.CopyFromBitmap(ListeImages[0]);
-            ratiow := btm1.Width / w;
-            ratioh := btm1.Height / h;
-            if (ratiow > ratioh) then
-              btm1.Resize(ceil(btm1.Width / ratioh), ceil(btm1.Height / ratioh))
-            else
-              btm1.Resize(ceil(btm1.Width / ratiow),
-                ceil(btm1.Height / ratiow));
-            ImageFinale.Bitmap.CopyFromBitmap(btm1,
-              trect.Create((btm1.Width - w) div 2, (btm1.Height - h) div 2,
-              ((btm1.Width - w) div 2) + w, ((btm1.Height - h) div 2) +
-              h), 0, 0);
-          finally
-            FreeAndNil(btm1);
-          end;
-        end;
-      2: // deux images => affichage d'une moitié de chaque image en bandes horizontales
-        begin
-          w := CLargeur; // 1 colonne
-          h := CHauteur div 2; // 2 lignes
-          i := 0;
-          for btm2 in ListeImages do
+    ImageFinale.BeginUpdate;
+    try
+      ImageFinale.Bitmap.SetSize(CLargeur, CHauteur); // TODO : BitmapScale ?
+{$IFDEF DEBUG}
+      ImageFinale.Bitmap.Clear(talphacolors.red);
+{$ELSE}
+      ImageFinale.Bitmap.Clear(talphacolors.White);
+{$ENDIF}
+      case ListeImages.Count of
+        1: // une image => redimensionnement pour en prendre une portion
           begin
-            btm1 := TBitmap.Create(btm2.Width, btm2.Height);
+            w := CLargeur; // 1 colonne
+            h := CHauteur; // 1 ligne
+            btm1 := TBitmap.Create(ListeImages[0].Width, ListeImages[0].Height);
             try
-              btm1.CopyFromBitmap(btm2);
+              btm1.CopyFromBitmap(ListeImages[0]);
               ratiow := btm1.Width / w;
               ratioh := btm1.Height / h;
               if (ratiow > ratioh) then
@@ -211,134 +193,167 @@ begin
                   ceil(btm1.Height / ratiow));
               ImageFinale.Bitmap.CopyFromBitmap(btm1,
                 trect.Create((btm1.Width - w) div 2, (btm1.Height - h) div 2,
-                ((btm1.Width - w) div 2) + w, ((btm1.Height - h) div 2) + h),
-                0, h * i);
+                ((btm1.Width - w) div 2) + w, ((btm1.Height - h) div 2) +
+                h), 0, 0);
             finally
               FreeAndNil(btm1);
             end;
-            inc(i);
           end;
-        end;
-      3: // trois images => affichage d'un tiers de chaque image en bandes verticales
-        begin
-          w := CLargeur div 3; // 3 colonnes
-          h := CHauteur; // 1 ligne
-          i := 0;
-          for btm2 in ListeImages do
+        2: // deux images => affichage d'une moitié de chaque image en bandes horizontales
           begin
-            btm1 := TBitmap.Create(btm2.Width, btm2.Height);
-            try
-              btm1.CopyFromBitmap(btm2);
-              ratiow := btm1.Width / w;
-              ratioh := btm1.Height / h;
-              if (ratiow > ratioh) then
-                btm1.Resize(ceil(btm1.Width / ratioh),
-                  ceil(btm1.Height / ratioh))
-              else
-                btm1.Resize(ceil(btm1.Width / ratiow),
-                  ceil(btm1.Height / ratiow));
-              ImageFinale.Bitmap.CopyFromBitmap(btm1,
-                trect.Create((btm1.Width - w) div 2, (btm1.Height - h) div 2,
-                ((btm1.Width - w) div 2) + w, ((btm1.Height - h) div 2) + h),
-                w * i, 0);
-            finally
-              FreeAndNil(btm1);
-            end;
-            inc(i);
-          end;
-        end;
-      4: // quatre images => affichage des photos en mosaique
-        begin
-          w := CLargeur div 2; // 2 colonnes
-          h := CHauteur div 2; // 2 lignes
-          i := 0;
-          j := 0;
-          for btm2 in ListeImages do
-          begin
-            btm1 := TBitmap.Create(btm2.Width, btm2.Height);
-            try
-              btm1.CopyFromBitmap(btm2);
-              ratiow := btm1.Width / w;
-              ratioh := btm1.Height / h;
-              if (ratiow > ratioh) then
-                btm1.Resize(ceil(btm1.Width / ratioh),
-                  ceil(btm1.Height / ratioh))
-              else
-                btm1.Resize(ceil(btm1.Width / ratiow),
-                  ceil(btm1.Height / ratiow));
-              ImageFinale.Bitmap.CopyFromBitmap(btm1,
-                trect.Create((btm1.Width - w) div 2, (btm1.Height - h) div 2,
-                ((btm1.Width - w) div 2) + w, ((btm1.Height - h) div 2) + h),
-                w * i, h * j);
-            finally
-              FreeAndNil(btm1);
-            end;
-            inc(i);
-            if (i >= 2) then
+            w := CLargeur; // 1 colonne
+            h := CHauteur div 2; // 2 lignes
+            i := 0;
+            for btm2 in ListeImages do
             begin
-              i := 0;
-              inc(j);
+              btm1 := TBitmap.Create(btm2.Width, btm2.Height);
+              try
+                btm1.CopyFromBitmap(btm2);
+                ratiow := btm1.Width / w;
+                ratioh := btm1.Height / h;
+                if (ratiow > ratioh) then
+                  btm1.Resize(ceil(btm1.Width / ratioh),
+                    ceil(btm1.Height / ratioh))
+                else
+                  btm1.Resize(ceil(btm1.Width / ratiow),
+                    ceil(btm1.Height / ratiow));
+                ImageFinale.Bitmap.CopyFromBitmap(btm1,
+                  trect.Create((btm1.Width - w) div 2, (btm1.Height - h) div 2,
+                  ((btm1.Width - w) div 2) + w, ((btm1.Height - h) div 2) + h),
+                  0, h * i);
+              finally
+                FreeAndNil(btm1);
+              end;
+              inc(i);
             end;
           end;
-        end;
-      5: // cinq images => affichage des photos en mosaique pour les 4 premières et la dernière par dessus, centrée en elipse
-        begin
-          w := CLargeur div 2; // 2 colonnes
-          h := CHauteur div 2; // 2 lignes
-          i := 0;
-          j := 0;
-          for btm2 in ListeImages do
+        3: // trois images => affichage d'un tiers de chaque image en bandes verticales
           begin
-            btm1 := TBitmap.Create(btm2.Width, btm2.Height);
-            try
-              btm1.CopyFromBitmap(btm2);
-              ratiow := btm1.Width / w;
-              ratioh := btm1.Height / h;
-              if (ratiow > ratioh) then
-                btm1.Resize(ceil(btm1.Width / ratioh),
-                  ceil(btm1.Height / ratioh))
-              else
-                btm1.Resize(ceil(btm1.Width / ratiow),
-                  ceil(btm1.Height / ratiow));
-              if (j > 1) then
-              begin
-                ellipse := TEllipse.Create(Self);
-                try
-                  ellipse.parent := Self;
-                  ellipse.Width := w;
-                  ellipse.Height := h;
-                  ellipse.Fill.Kind := tbrushkind.Bitmap;
-                  ellipse.Fill.Bitmap.WrapMode := twrapmode.TileOriginal;
-                  ellipse.Fill.Bitmap.Bitmap.Assign(btm1);
-                  ImageFinale.Bitmap.Canvas.BeginScene;
-                  ellipse.PaintTo(ImageFinale.Bitmap.Canvas,
-                    trectf.Create(w / 2, h / 2, (w / 2) + w, (h / 2) + h));
-                  ImageFinale.Bitmap.Canvas.EndScene;
-                finally
-                  FreeAndNil(ellipse);
-                end;
-              end
-              else
+            w := CLargeur div 3; // 3 colonnes
+            h := CHauteur; // 1 ligne
+            i := 0;
+            for btm2 in ListeImages do
+            begin
+              btm1 := TBitmap.Create(btm2.Width, btm2.Height);
+              try
+                btm1.CopyFromBitmap(btm2);
+                ratiow := btm1.Width / w;
+                ratioh := btm1.Height / h;
+                if (ratiow > ratioh) then
+                  btm1.Resize(ceil(btm1.Width / ratioh),
+                    ceil(btm1.Height / ratioh))
+                else
+                  btm1.Resize(ceil(btm1.Width / ratiow),
+                    ceil(btm1.Height / ratiow));
+                ImageFinale.Bitmap.CopyFromBitmap(btm1,
+                  trect.Create((btm1.Width - w) div 2, (btm1.Height - h) div 2,
+                  ((btm1.Width - w) div 2) + w, ((btm1.Height - h) div 2) + h),
+                  w * i, 0);
+              finally
+                FreeAndNil(btm1);
+              end;
+              inc(i);
+            end;
+          end;
+        4: // quatre images => affichage des photos en mosaique
+          begin
+            w := CLargeur div 2; // 2 colonnes
+            h := CHauteur div 2; // 2 lignes
+            i := 0;
+            j := 0;
+            for btm2 in ListeImages do
+            begin
+              btm1 := TBitmap.Create(btm2.Width, btm2.Height);
+              try
+                btm1.CopyFromBitmap(btm2);
+                ratiow := btm1.Width / w;
+                ratioh := btm1.Height / h;
+                if (ratiow > ratioh) then
+                  btm1.Resize(ceil(btm1.Width / ratioh),
+                    ceil(btm1.Height / ratioh))
+                else
+                  btm1.Resize(ceil(btm1.Width / ratiow),
+                    ceil(btm1.Height / ratiow));
                 ImageFinale.Bitmap.CopyFromBitmap(btm1,
                   trect.Create((btm1.Width - w) div 2, (btm1.Height - h) div 2,
                   ((btm1.Width - w) div 2) + w, ((btm1.Height - h) div 2) + h),
                   w * i, h * j);
-            finally
-              FreeAndNil(btm1);
-            end;
-            inc(i);
-            if (i >= 2) then
-            begin
-              i := 0;
-              inc(j);
+              finally
+                FreeAndNil(btm1);
+              end;
+              inc(i);
+              if (i >= 2) then
+              begin
+                i := 0;
+                inc(j);
+              end;
             end;
           end;
-        end;
+        5: // cinq images => affichage des photos en mosaique pour les 4 premières et la dernière par dessus, centrée en elipse
+          begin
+            w := CLargeur div 2; // 2 colonnes
+            h := CHauteur div 2; // 2 lignes
+            i := 0;
+            j := 0;
+            for btm2 in ListeImages do
+            begin
+              btm1 := TBitmap.Create(btm2.Width, btm2.Height);
+              try
+                btm1.CopyFromBitmap(btm2);
+                ratiow := btm1.Width / w;
+                ratioh := btm1.Height / h;
+                if (ratiow > ratioh) then
+                  btm1.Resize(ceil(btm1.Width / ratioh),
+                    ceil(btm1.Height / ratioh))
+                else
+                  btm1.Resize(ceil(btm1.Width / ratiow),
+                    ceil(btm1.Height / ratiow));
+                if (j > 1) then
+                begin
+                  ellipse := TEllipse.Create(Self);
+                  try
+                    ellipse.parent := Self;
+                    ellipse.Width := w;
+                    ellipse.Height := h;
+                    ellipse.Fill.Kind := tbrushkind.Bitmap;
+                    ellipse.Fill.Bitmap.WrapMode := twrapmode.TileOriginal;
+                    ellipse.Fill.Bitmap.Bitmap.Assign(btm1);
+                    ImageFinale.Bitmap.Canvas.BeginScene;
+                    ellipse.PaintTo(ImageFinale.Bitmap.Canvas,
+                      trectf.Create(w / 2, h / 2, (w / 2) + w, (h / 2) + h));
+                    ImageFinale.Bitmap.Canvas.EndScene;
+                  finally
+                    FreeAndNil(ellipse);
+                  end;
+                end
+                else
+                  ImageFinale.Bitmap.CopyFromBitmap(btm1,
+                    trect.Create((btm1.Width - w) div 2,
+                    (btm1.Height - h) div 2, ((btm1.Width - w) div 2) + w,
+                    ((btm1.Height - h) div 2) + h), w * i, h * j);
+              finally
+                FreeAndNil(btm1);
+              end;
+              inc(i);
+              if (i >= 2) then
+              begin
+                i := 0;
+                inc(j);
+              end;
+            end;
+          end;
+      end;
+    finally
+      ImageFinale.EndUpdate;
     end;
     ImageFinale.BestFit;
   end
   else
+{$IFDEF DEBUG}
+    ImageFinale.Bitmap.Clear(talphacolors.red);
+{$ELSE}
     ImageFinale.Bitmap.Clear(talphacolors.White);
+{$ENDIF}
 end;
 
 procedure TfrmAjoutCompo.TakePhotoFromLibraryAction1DidFinishTaking

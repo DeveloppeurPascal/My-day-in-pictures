@@ -16,94 +16,113 @@ object frmAjoutCompo: TfrmAjoutCompo
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    object btnBack: TPath
+    object btnAjoutPhoto: TLayout
+      Align = Right
+      HitTest = True
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 175.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      OnClick = btnAjoutPhotoClick
+      object btnAjoutPhotoImg: TPath
+        Align = Client
+        Locked = True
+        HitTest = False
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object btnRetraitPhoto: TLayout
+      Align = Right
+      HitTest = True
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 225.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnClick = btnRetraitPhotoClick
+      object btnRetraitPhotoImg: TPath
+        Align = Client
+        Locked = True
+        HitTest = False
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object btnEnregistrer: TLayout
+      Align = MostRight
+      HitTest = True
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 275.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnClick = btnEnregistrerClick
+      object btnEnregistrerImg: TPath
+        Align = Client
+        Locked = True
+        HitTest = False
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object btnBack: TLayout
       Align = Left
-      HitTest = False
+      HitTest = True
       Margins.Left = 5.000000000000000000
       Margins.Top = 5.000000000000000000
       Margins.Right = 5.000000000000000000
       Margins.Bottom = 5.000000000000000000
       Position.X = 5.000000000000000000
       Position.Y = 5.000000000000000000
-      Size.Width = 50.000000000000000000
+      Size.Width = 40.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
-      WrapMode = Fit
-      object btnBackClickZone: TLayout
-        Align = Contents
+      TabOrder = 0
+      OnClick = btnBackClick
+      object btnBackImg: TPath
+        Align = Client
         Locked = True
-        HitTest = True
-        Size.Width = 50.000000000000000000
-        Size.Height = 40.000000000000000000
+        HitTest = False
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 30.000000000000000000
+        Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 0
-        OnClick = btnBackClick
-      end
-    end
-    object btnAjoutPhoto: TPath
-      Align = Right
-      HitTest = False
-      Margins.Left = 5.000000000000000000
-      Margins.Top = 5.000000000000000000
-      Margins.Right = 5.000000000000000000
-      Margins.Bottom = 5.000000000000000000
-      Position.X = 145.000000000000000000
-      Position.Y = 5.000000000000000000
-      Size.Width = 50.000000000000000000
-      Size.Height = 40.000000000000000000
-      Size.PlatformDefault = False
-      object btnAjoutPhotoClickZone: TLayout
-        Align = Contents
-        HitTest = True
-        Size.Width = 50.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        OnClick = btnAjoutPhotoClick
-      end
-    end
-    object btnEnregistrer: TPath
-      Align = Right
-      HitTest = False
-      Margins.Left = 5.000000000000000000
-      Margins.Top = 5.000000000000000000
-      Margins.Right = 5.000000000000000000
-      Margins.Bottom = 5.000000000000000000
-      Position.X = 265.000000000000000000
-      Position.Y = 5.000000000000000000
-      Size.Width = 50.000000000000000000
-      Size.Height = 40.000000000000000000
-      Size.PlatformDefault = False
-      object btnEnregistrerClickZone: TLayout
-        Align = Contents
-        HitTest = True
-        Size.Width = 50.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        OnClick = btnEnregistrerClick
-      end
-    end
-    object btnRetraitPhoto: TPath
-      Align = Right
-      HitTest = False
-      Margins.Left = 5.000000000000000000
-      Margins.Top = 5.000000000000000000
-      Margins.Right = 5.000000000000000000
-      Margins.Bottom = 5.000000000000000000
-      Position.X = 205.000000000000000000
-      Position.Y = 5.000000000000000000
-      Size.Width = 50.000000000000000000
-      Size.Height = 40.000000000000000000
-      Size.PlatformDefault = False
-      object btnRetraitPhotoClickZone: TLayout
-        Align = Contents
-        HitTest = True
-        Size.Width = 50.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        OnClick = btnRetraitPhotoClick
+        WrapMode = Fit
       end
     end
   end
