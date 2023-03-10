@@ -25,7 +25,7 @@ begin
   chemin := tpath.Combine(tpath.GetDocumentsPath, 'MyDayInPictures-debug');
 {$ELSE}
   // TODO : vérifier si enregistrement dans "MesImages" pour iOS+Android est opérationnel ou bloqué
-  chemin := tpath.Combine(tpath.GetImagesPath, 'MyDayInPictures');
+  chemin := tpath.Combine(tpath.GetPicturesPath, 'MyDayInPictures');
 {$ENDIF}
   if not tdirectory.Exists(chemin) then
     tdirectory.CreateDirectory(chemin);
