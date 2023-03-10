@@ -1,0 +1,139 @@
+object frmAjoutCompo: TfrmAjoutCompo
+  Align = Contents
+  Size.Width = 320.000000000000000000
+  Size.Height = 240.000000000000000000
+  Size.PlatformDefault = False
+  object background: TRectangle
+    Align = Contents
+    Fill.Color = claWhite
+    Size.Width = 320.000000000000000000
+    Size.Height = 240.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 320.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object btnBack: TPath
+      Align = Left
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Fit
+      object btnBackClickZone: TLayout
+        Align = Contents
+        Locked = True
+        HitTest = True
+        Size.Width = 50.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = btnBackClick
+      end
+    end
+    object btnAjoutPhoto: TPath
+      Align = Right
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 145.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      object btnAjoutPhotoClickZone: TLayout
+        Align = Contents
+        HitTest = True
+        Size.Width = 50.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = btnAjoutPhotoClick
+      end
+    end
+    object btnEnregistrer: TPath
+      Align = Right
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 265.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      object btnEnregistrerClickZone: TLayout
+        Align = Contents
+        HitTest = True
+        Size.Width = 50.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = btnEnregistrerClick
+      end
+    end
+    object btnRetraitPhoto: TPath
+      Align = Right
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 205.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      object btnRetraitPhotoClickZone: TLayout
+        Align = Contents
+        HitTest = True
+        Size.Width = 50.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = btnRetraitPhotoClick
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 
+      'Images JPEG|*.jpg;*.jpeg|Images PNG|*.png|Toutes les images|*.jp' +
+      'g;*.jpeg;*.png'
+    FilterIndex = 3
+    Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing, ofDontAddToRecent]
+    Title = 'Choisissez une photo.'
+    Left = 104
+    Top = 128
+  end
+  object ImageFinale: TImageViewer
+    Align = Client
+    Size.Width = 320.000000000000000000
+    Size.Height = 190.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Viewport.Width = 316.000000000000000000
+    Viewport.Height = 186.000000000000000000
+  end
+  object ActionList1: TActionList
+    Left = 200
+    Top = 120
+    object TakePhotoFromLibraryAction1: TTakePhotoFromLibraryAction
+      Category = 'Biblioth'#232'que multim'#233'dia'
+      MaxHeight = 800
+      MaxWidth = 600
+      OnDidFinishTaking = TakePhotoFromLibraryAction1DidFinishTaking
+    end
+  end
+end

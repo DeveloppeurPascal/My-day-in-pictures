@@ -1,0 +1,60 @@
+object frmListeCompositions: TfrmListeCompositions
+  Align = Contents
+  Size.Width = 542.000000000000000000
+  Size.Height = 563.000000000000000000
+  Size.PlatformDefault = False
+  object background: TRectangle
+    Align = Contents
+    Fill.Color = claWhite
+    Size.Width = 542.000000000000000000
+    Size.Height = 563.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 542.000000000000000000
+    Size.Height = 563.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnViewportPositionChange = VertScrollBox1ViewportPositionChange
+    Viewport.Width = 542.000000000000000000
+    Viewport.Height = 563.000000000000000000
+    object grille: TGridLayout
+      Align = Top
+      HitTest = False
+      ItemHeight = 165.000000000000000000
+      ItemWidth = 250.000000000000000000
+      Orientation = Horizontal
+      Size.Width = 542.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+    object infoChargementSuite: TAniIndicator
+      Align = Top
+      Enabled = True
+      Position.Y = 50.000000000000000000
+      Size.Width = 542.000000000000000000
+      Size.Height = 47.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object btnAddCompo: TPath
+    Anchors = [akRight, akBottom]
+    Fill.Color = claCrimson
+    HitTest = False
+    Position.X = 480.000000000000000000
+    Position.Y = 504.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    WrapMode = Fit
+    object btnAddCompoClickZone: TLayout
+      Align = Contents
+      Locked = True
+      HitTest = True
+      TabOrder = 0
+      OnClick = btnAddCompoClick
+    end
+  end
+end
