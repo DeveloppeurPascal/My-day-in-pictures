@@ -221,7 +221,7 @@ begin
         2: // deux images => affichage d'une moitié de chaque image en bandes horizontales
           begin
             w := clargeur; // 1 colonne
-            h := chauteur div 2; // 2 lignes
+            h := chauteur div 2 + chauteur mod 2; // 2 lignes
             i := 0;
             for btm2 in ListeImages do
             begin
@@ -248,7 +248,7 @@ begin
           end;
         3: // trois images => affichage d'un tiers de chaque image en bandes verticales
           begin
-            w := clargeur div 3; // 3 colonnes
+            w := clargeur div 3 + clargeur mod 3; // 3 colonnes
             h := chauteur; // 1 ligne
             i := 0;
             for btm2 in ListeImages do
@@ -276,8 +276,8 @@ begin
           end;
         4: // quatre images => affichage des photos en mosaique
           begin
-            w := clargeur div 2; // 2 colonnes
-            h := chauteur div 2; // 2 lignes
+            w := clargeur div 2 + clargeur mod 2; // 2 colonnes
+            h := chauteur div 2 + chauteur mod 2; // 2 lignes
             i := 0;
             j := 0;
             for btm2 in ListeImages do
@@ -310,8 +310,8 @@ begin
           end;
         5: // cinq images => affichage des photos en mosaique pour les 4 premières et la dernière par dessus, centrée en elipse
           begin
-            w := clargeur div 2; // 2 colonnes
-            h := chauteur div 2; // 2 lignes
+            w := clargeur div 2 + clargeur mod 2; // 2 colonnes
+            h := chauteur div 2 + chauteur mod 2; // 2 lignes
             i := 0; // Colonne
             j := 0; // Ligne
             for btm2 in ListeImages do
