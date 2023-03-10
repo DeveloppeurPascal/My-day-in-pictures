@@ -179,6 +179,7 @@ var
   w, h: integer;
   // pour jouer sur les formes affichées
   ellipse: TEllipse;
+  bmpscale: single;
 begin
   btnAjoutPhoto.enabled := ListeImages.Count < CNombreModeles;
   btnRetraitPhoto.enabled := ListeImages.Count > 0;
@@ -311,8 +312,8 @@ begin
           begin
             w := clargeur div 2; // 2 colonnes
             h := chauteur div 2; // 2 lignes
-            i := 0;
-            j := 0;
+            i := 0; // Colonne
+            j := 0; // Ligne
             for btm2 in ListeImages do
             begin
               btm1 := TBitmap.Create(btm2.Width, btm2.Height);
@@ -327,19 +328,26 @@ begin
                   btm1.Resize(ceil(btm1.Width / ratiow),
                     ceil(btm1.Height / ratiow));
                 if (j > 1) then
+                // deuxième ligne, donc théoriquement 2 x 2 images +1
                 begin
                   ellipse := TEllipse.Create(Self);
                   try
+                    bmpscale := scene.GetSceneScale;
                     ellipse.parent := Self;
-                    ellipse.Width := w;
-                    ellipse.Height := h;
+                    ellipse.Width := w / bmpscale;
+                    ellipse.Height := h / bmpscale;
                     ellipse.Fill.Kind := tbrushkind.Bitmap;
                     ellipse.Fill.Bitmap.WrapMode := twrapmode.TileOriginal;
                     ellipse.Fill.Bitmap.Bitmap.Assign(btm1);
+                    ellipse.Stroke.Kind := tbrushkind.None;
                     ImageFinale.Bitmap.Canvas.BeginScene;
-                    ellipse.PaintTo(ImageFinale.Bitmap.Canvas,
-                      trectf.Create(w / 2, h / 2, (w / 2) + w, (h / 2) + h));
-                    ImageFinale.Bitmap.Canvas.EndScene;
+                    try
+                      ellipse.PaintTo(ImageFinale.Bitmap.Canvas,
+                        trectf.Create((w / 2) / bmpscale, (h / 2) / bmpscale,
+                        ((w / 2) + w) / bmpscale, ((h / 2) + h) / bmpscale));
+                    finally
+                      ImageFinale.Bitmap.Canvas.EndScene;
+                    end;
                   finally
                     FreeAndNil(ellipse);
                   end;
@@ -353,7 +361,7 @@ begin
                 FreeAndNil(btm1);
               end;
               inc(i);
-              if (i >= 2) then
+              if (i >= 2) then // 2 images sur la ligne, on passe à la suivante
               begin
                 i := 0;
                 inc(j);
