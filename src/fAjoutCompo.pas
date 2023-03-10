@@ -53,9 +53,27 @@ uses uSVG, System.IOUtils, System.Permissions, FMX.DialogService, uConfig,
 { TfrmAjoutCompo }
 
 procedure TfrmAjoutCompo.ajouteImage(ABitmap: TBitmap);
+var
+  max: integer;
+  ratiow, ratioh: single;
 begin
-  ListeImages.Add(ABitmap);
-  rafraichiImageFinale;
+  if assigned(ABitmap) and (ABitmap.Width > 0) and (ABitmap.Height > 0) then
+  begin
+    if clargeur > chauteur then
+      max := clargeur
+    else
+      max := chauteur;
+    ratiow := ABitmap.Width / max;
+    ratioh := ABitmap.Height / max;
+    if (ratiow > ratioh) then
+      ABitmap.Resize(ceil(ABitmap.Width / ratioh),
+        ceil(ABitmap.Height / ratioh))
+    else
+      ABitmap.Resize(ceil(ABitmap.Width / ratiow),
+        ceil(ABitmap.Height / ratiow));
+    ListeImages.Add(ABitmap);
+    rafraichiImageFinale;
+  end;
 end;
 
 procedure TfrmAjoutCompo.btnAjoutPhotoClick(Sender: TObject);
@@ -169,7 +187,7 @@ begin
   begin
     ImageFinale.BeginUpdate;
     try
-      ImageFinale.Bitmap.SetSize(CLargeur, CHauteur); // TODO : BitmapScale ?
+      ImageFinale.Bitmap.SetSize(clargeur, chauteur); // TODO : BitmapScale ?
 {$IFDEF DEBUG}
       ImageFinale.Bitmap.Clear(talphacolors.red);
 {$ELSE}
@@ -178,8 +196,8 @@ begin
       case ListeImages.Count of
         1: // une image => redimensionnement pour en prendre une portion
           begin
-            w := CLargeur; // 1 colonne
-            h := CHauteur; // 1 ligne
+            w := clargeur; // 1 colonne
+            h := chauteur; // 1 ligne
             btm1 := TBitmap.Create(ListeImages[0].Width, ListeImages[0].Height);
             try
               btm1.CopyFromBitmap(ListeImages[0]);
@@ -201,8 +219,8 @@ begin
           end;
         2: // deux images => affichage d'une moitié de chaque image en bandes horizontales
           begin
-            w := CLargeur; // 1 colonne
-            h := CHauteur div 2; // 2 lignes
+            w := clargeur; // 1 colonne
+            h := chauteur div 2; // 2 lignes
             i := 0;
             for btm2 in ListeImages do
             begin
@@ -229,8 +247,8 @@ begin
           end;
         3: // trois images => affichage d'un tiers de chaque image en bandes verticales
           begin
-            w := CLargeur div 3; // 3 colonnes
-            h := CHauteur; // 1 ligne
+            w := clargeur div 3; // 3 colonnes
+            h := chauteur; // 1 ligne
             i := 0;
             for btm2 in ListeImages do
             begin
@@ -257,8 +275,8 @@ begin
           end;
         4: // quatre images => affichage des photos en mosaique
           begin
-            w := CLargeur div 2; // 2 colonnes
-            h := CHauteur div 2; // 2 lignes
+            w := clargeur div 2; // 2 colonnes
+            h := chauteur div 2; // 2 lignes
             i := 0;
             j := 0;
             for btm2 in ListeImages do
@@ -291,8 +309,8 @@ begin
           end;
         5: // cinq images => affichage des photos en mosaique pour les 4 premières et la dernière par dessus, centrée en elipse
           begin
-            w := CLargeur div 2; // 2 colonnes
-            h := CHauteur div 2; // 2 lignes
+            w := clargeur div 2; // 2 colonnes
+            h := chauteur div 2; // 2 lignes
             i := 0;
             j := 0;
             for btm2 in ListeImages do
