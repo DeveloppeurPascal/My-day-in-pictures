@@ -12,10 +12,10 @@ type
   TfrmListeCompositions = class(TFrame)
     VertScrollBox1: TVertScrollBox;
     grille: TGridLayout;
-    btnAddCompo: TPath;
+    btnAddCompoImg: TPath;
     infoChargementSuite: TAniIndicator;
     background: TRectangle;
-    btnAddCompoClickZone: TLayout;
+    btnAddCompo: TLayout;
     procedure VertScrollBox1ViewportPositionChange(Sender: TObject;
       const OldViewportPosition, NewViewportPosition: TPointF;
       const ContentSizeChanged: Boolean);
@@ -114,7 +114,7 @@ begin
   try
     frm.Parent := application.MainForm;
     frm.BringToFront;
-    frm.btnAddCompo.Data.Data := svg_pluscircle;
+    frm.btnAddCompoImg.Data.Data := svg_pluscircle;
     frm.initialiseListe;
   except
     FreeAndNil(frm);

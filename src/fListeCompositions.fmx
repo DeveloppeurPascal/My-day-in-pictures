@@ -11,11 +11,11 @@ object frmListeCompositions: TfrmListeCompositions
     Size.PlatformDefault = False
   end
   object VertScrollBox1: TVertScrollBox
-    Align = Client
+    Align = Contents
     Size.Width = 542.000000000000000000
     Size.Height = 563.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 0
+    TabOrder = 1
     OnViewportPositionChange = VertScrollBox1ViewportPositionChange
     Viewport.Width = 542.000000000000000000
     Viewport.Height = 563.000000000000000000
@@ -39,22 +39,25 @@ object frmListeCompositions: TfrmListeCompositions
       Size.PlatformDefault = False
     end
   end
-  object btnAddCompo: TPath
+  object btnAddCompo: TLayout
     Anchors = [akRight, akBottom]
-    Fill.Color = claCrimson
-    HitTest = False
-    Position.X = 480.000000000000000000
-    Position.Y = 504.000000000000000000
+    HitTest = True
+    Position.X = 472.000000000000000000
+    Position.Y = 496.000000000000000000
     Size.Width = 50.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
-    WrapMode = Fit
-    object btnAddCompoClickZone: TLayout
-      Align = Contents
+    TabOrder = 0
+    OnClick = btnAddCompoClick
+    object btnAddCompoImg: TPath
+      Align = Client
+      Fill.Color = claCrimson
       Locked = True
-      HitTest = True
-      TabOrder = 0
-      OnClick = btnAddCompoClick
+      HitTest = False
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Fit
     end
   end
 end
