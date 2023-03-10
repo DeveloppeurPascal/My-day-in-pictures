@@ -15,3 +15,5 @@
 
 * ajouter un menu pour Win/Mac/linux
 * ajouter un bouton "fermer" sur l'écran de départ pour Win/Mac/linux
+
+* toujours un problème avec l'ellipse de la cinquième photo : l'image copiée est trop grande mêe si la zone de copie est la bonne
