@@ -85,7 +85,8 @@ begin
   begin
     fichierPhoto := listePhotos[i];
     if fichierPhoto.StartsWith(debutNom) and
-      fichierPhoto.EndsWith(CExtensionFichier) then
+      (fichierPhoto.EndsWith(CExtensionFichier1) or
+      fichierPhoto.EndsWith(CExtensionFichier2)) then
     begin
       trouve := false;
       if assigned(grille.Children) then

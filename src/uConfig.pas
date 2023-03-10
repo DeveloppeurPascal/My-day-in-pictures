@@ -4,7 +4,9 @@ interface
 
 Const
   CNomFichier = 'MyDayInPictures';
-  CExtensionFichier = '.jpg'; // '.png';
+  CExtensionFichier1 = '.jpg';
+  CExtensionFichier2 = '.png';
+  CExtensionFichierFinal = '.jpg';
   CLargeur = 500; // largeur du résultat
   CHauteur = 330; // haugeur du résultat
   CNombreModeles = 5; // nombre de présentations possibles du résultat

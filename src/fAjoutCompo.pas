@@ -103,7 +103,7 @@ begin
   begin
     DateTimeToString(dateheure, 'yyyymmddhhnnss', now);
     nomFichier := System.IOUtils.TPath.Combine(getComposPath,
-      CNomFichier + '-' + dateheure + CExtensionFichier);
+      CNomFichier + '-' + dateheure + CExtensionFichierFinal);
     ImageFinale.Bitmap.SaveToFile(nomFichier);
     if assigned(FAjoutPhotoCallback) then
       FAjoutPhotoCallback(nomFichier);
@@ -304,7 +304,7 @@ begin
               begin
                 ellipse := TEllipse.Create(Self);
                 try
-//                  ellipse.parent := Self;
+                  ellipse.parent := Self;
                   ellipse.Width := w;
                   ellipse.Height := h;
                   ellipse.Fill.Kind := tbrushkind.Bitmap;
