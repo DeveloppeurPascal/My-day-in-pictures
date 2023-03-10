@@ -2427,7 +2427,7 @@ object frmListeCompositions: TfrmListeCompositions
       end>
     URL = 'https://mydayinpictures.olfsoftware.fr/'
     Description.Strings = (
-      '(c) Patrick Pr'#233'martin / Olf Software 2022-2023'
+      '(c) Patrick Pr'#233'martin / Olf Software 2019-2023'
       ''
       
         'This program is a shareware. If you use it, please buy a license' +
