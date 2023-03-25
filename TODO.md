@@ -7,7 +7,6 @@
 * permettre d'utiliser un rectangle, un cercle ou l'ellipse pour l'image numéro 5 positionnée en centré par dessus les autres
 * dans les options, pouvoir choisir le dossier d'enregistrement des images créées
 
-* bogue : sur Mac aucune image n'est affichée quand on en sélectionne une, mais il l'enregistre quand même si on choisit de le faire avec la disquette => problème au niveau du TImageViewer ?
 
 * mettre à jour les informations de déploiement (Android notamment)
 
@@ -16,4 +15,4 @@
 * ajouter un menu pour Win/Mac/linux
 * ajouter un bouton "fermer" sur l'écran de départ pour Win/Mac/linux
 
-* toujours un problème avec l'ellipse de la cinquième photo : l'image copiée est trop grande mêe si la zone de copie est la bonne
+* toujours un problème avec l'ellipse de la cinquième photo : l'image copiée est trop grande même si la zone de copie est la bonne

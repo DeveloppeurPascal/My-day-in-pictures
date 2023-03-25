@@ -21,11 +21,11 @@ type
     ActionList1: TActionList;
     TakePhotoFromLibraryAction1: TTakePhotoFromLibraryAction;
     OpenDialog1: TOpenDialog;
-    ImageFinale: TImageViewer;
     btnEnregistrerImg: TPath;
     btnEnregistrer: TLayout;
     btnRetraitPhotoImg: TPath;
     btnRetraitPhoto: TLayout;
+    ImageFinale: TImageControl;
     procedure btnBackClick(Sender: TObject);
     procedure btnAjoutPhotoClick(Sender: TObject);
     procedure TakePhotoFromLibraryAction1DidFinishTaking(Image: TBitmap);
@@ -380,7 +380,7 @@ begin
     finally
       ImageFinale.EndUpdate;
     end;
-    ImageFinale.BestFit;
+//    ImageFinale.BestFit;
   end
   else
 {$IFDEF DEBUG}
@@ -395,5 +395,11 @@ procedure TfrmAjoutCompo.TakePhotoFromLibraryAction1DidFinishTaking
 begin
   ajouteImage(Image);
 end;
+
+initialization
+
+{$IFDEF MacOS}
+//  GlobalUseMetal := true;
+{$ENDIF}
 
 end.

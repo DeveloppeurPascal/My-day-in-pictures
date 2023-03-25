@@ -136,14 +136,12 @@ object frmAjoutCompo: TfrmAjoutCompo
     Left = 104
     Top = 128
   end
-  object ImageFinale: TImageViewer
+  object ImageFinale: TImageControl
     Align = Client
     Size.Width = 320.000000000000000000
     Size.Height = 190.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 4
-    Viewport.Width = 316.000000000000000000
-    Viewport.Height = 186.000000000000000000
+    TabOrder = 6
   end
   object ActionList1: TActionList
     Left = 200
