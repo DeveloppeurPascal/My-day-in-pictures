@@ -1,16 +1,13 @@
 # TODO List
 
-* ajouter un écran d'options pour choisir le format de stockage : PNG ou JPG (JPG par défaut)
-* ajouter un écran d'options pour choisir la taille des images générées : PNG ou JPG (JPG par défaut)
-* proposer différents templates d'affichage pour les cas de 1 à 5 images assemblées
-* permettre de personnaliser la position de chaque image dans la composition (left/right/top/bottom/et nombre de cases occupées par exemple)
-* permettre d'utiliser un rectangle, un cercle ou l'ellipse pour l'image numéro 5 positionnée en centré par dessus les autres
-* dans les options, pouvoir choisir le dossier d'enregistrement des images créées
-
-
-* mettre à jour les informations de déploiement (Android notamment)
-
-* pour iOS et Android, gérer le partage de l'image sélectionnée plutôt que l'ouvrir par défaut comme sous windows/Mac/linux
-
 * ajouter un menu pour Win/Mac/linux
-* ajouter un bouton "fermer" sur l'écran de départ pour Win/Mac/linux
+
+* si 1 image, choisir l'orientation
+* si 2 images ou plus, choisir orientation du final et differentes positions pour les images (horizontales, verticales, gauche + 2 à droite, ...)
+* si 5 images, choisir le type d'affichage de l'image centrale (ellipse, étoile, ...)
+* pouvoir éventuellement ajouter des images de foreground (en dur parmi une sélection, genre affichages manga et autres)
+
+* ajouter un écran de paramétrage 
+* dans les options, pouvoir définir la largeur / hauteur finales de la composition)
+
+* sur iOS (iPhone et iPad) fournir une image de démarrage en thème clair et en thème sombre dans les options du projet
