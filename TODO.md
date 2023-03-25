@@ -3,7 +3,7 @@
 * ajouter un écran d'options pour choisir le format de stockage : PNG ou JPG (JPG par défaut)
 * ajouter un écran d'options pour choisir la taille des images générées : PNG ou JPG (JPG par défaut)
 * proposer différents templates d'affichage pour les cas de 1 à 5 images assemblées
-* permettre de personnaliser la position de chaque image dans al composition (left/right/top/bottom/et nombre de cases occupées par exemple)
+* permettre de personnaliser la position de chaque image dans la composition (left/right/top/bottom/et nombre de cases occupées par exemple)
 * permettre d'utiliser un rectangle, un cercle ou l'ellipse pour l'image numéro 5 positionnée en centré par dessus les autres
 * dans les options, pouvoir choisir le dossier d'enregistrement des images créées
 
@@ -14,5 +14,3 @@
 
 * ajouter un menu pour Win/Mac/linux
 * ajouter un bouton "fermer" sur l'écran de départ pour Win/Mac/linux
-
-* toujours un problème avec l'ellipse de la cinquième photo : l'image copiée est trop grande même si la zone de copie est la bonne

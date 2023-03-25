@@ -342,8 +342,8 @@ begin
                   try
                     bmpscale := scene.GetSceneScale;
                     ellipse.parent := self;
-                    ellipse.Width := w / bmpscale;
-                    ellipse.Height := h / bmpscale;
+                    ellipse.Width := w;
+                    ellipse.Height := h;
                     ellipse.Fill.Kind := tbrushkind.Bitmap;
                     ellipse.Fill.Bitmap.WrapMode := twrapmode.TileOriginal;
                     ellipse.Fill.Bitmap.Bitmap.Assign(btm1);
@@ -351,8 +351,7 @@ begin
                     ImageFinale.Bitmap.Canvas.BeginScene;
                     try
                       ellipse.PaintTo(ImageFinale.Bitmap.Canvas,
-                        trectf.Create((w / 2) / bmpscale, (h / 2) / bmpscale,
-                        ((w / 2) + w) / bmpscale, ((h / 2) + h) / bmpscale));
+                        trectf.Create(w / 2, h / 2, (w / 2) + w, (h / 2) + h));
                     finally
                       ImageFinale.Bitmap.Canvas.EndScene;
                     end;
@@ -380,7 +379,7 @@ begin
     finally
       ImageFinale.EndUpdate;
     end;
-//    ImageFinale.BestFit;
+    // ImageFinale.BestFit;
   end
   else
 {$IFDEF DEBUG}
@@ -399,7 +398,7 @@ end;
 initialization
 
 {$IFDEF MacOS}
-//  GlobalUseMetal := true;
+// GlobalUseMetal := true;
 {$ENDIF}
 
 end.
