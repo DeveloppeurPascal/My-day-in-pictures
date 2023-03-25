@@ -11,14 +11,14 @@ object frmListeCompositions: TfrmListeCompositions
     Size.PlatformDefault = False
   end
   object VertScrollBox1: TVertScrollBox
-    Align = Contents
+    Align = Client
     Size.Width = 542.000000000000000000
-    Size.Height = 563.000000000000000000
+    Size.Height = 523.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     OnViewportPositionChange = VertScrollBox1ViewportPositionChange
     Viewport.Width = 542.000000000000000000
-    Viewport.Height = 563.000000000000000000
+    Viewport.Height = 523.000000000000000000
     object grille: TGridLayout
       Align = Top
       HitTest = False
