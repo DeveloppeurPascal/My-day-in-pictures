@@ -83,8 +83,8 @@ object frmListeCompositions: TfrmListeCompositions
   end
   object OlfAboutDialog1: TOlfAboutDialog
     Titre = 'My day in pictures'
-    VersionNumero = '1.0'
-    VersionDate = '20230310'
+    VersionNumero = '1.1'
+    VersionDate = '20230325'
     MultiResBitmap.Height = 512
     MultiResBitmap.Width = 512
     MultiResBitmap = <
@@ -2435,7 +2435,7 @@ object frmListeCompositions: TfrmListeCompositions
         'eveloppeurPascal/My-day-in-pictures')
     onURLClick = OlfAboutDialog1URLClick
     Langue = EN
-    Left = 256
-    Top = 264
+    Left = 120
+    Top = 296
   end
 end
