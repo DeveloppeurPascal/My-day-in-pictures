@@ -196,7 +196,7 @@ begin
   begin
     ImageFinale.BeginUpdate;
     try
-      ImageFinale.Bitmap.SetSize(clargeur, chauteur); // TODO : BitmapScale ?
+      ImageFinale.Bitmap.SetSize(clargeur, chauteur);
 {$IFDEF DEBUG}
       ImageFinale.Bitmap.Clear(talphacolors.red);
 {$ELSE}
@@ -391,8 +391,12 @@ end;
 
 procedure TfrmAjoutCompo.TakePhotoFromLibraryAction1DidFinishTaking
   (Image: TBitmap);
+var
+  Bitmap: TBitmap;
 begin
-  ajouteImage(Image);
+  Bitmap := TBitmap.Create(Image.Width, Image.Height);
+  Bitmap.CopyFromBitmap(Image);
+  ajouteImage(Bitmap);
 end;
 
 initialization
