@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes,
   System.Variants,
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Objects, FMX.Layouts, FMX.Controls.Presentation, Olf.FMX.AboutDialog;
+  FMX.Objects, FMX.Layouts, FMX.Controls.Presentation, Olf.FMX.AboutDialog,
+  System.Actions, FMX.ActnList, FMX.StdActns;
 
 type
   TfrmListeCompositions = class(TFrame)
@@ -40,7 +41,7 @@ implementation
 
 {$R *.fmx}
 
-uses uSVG, uConfig, System.IOUtils, fAjoutCompo, u_urlOpen;
+uses uSVG, uConfig, System.IOUtils, fAjoutCompo, u_urlOpen, FMX.MediaLibrary;
 
 { TfrmListeCompositions }
 
@@ -145,10 +146,19 @@ begin
 end;
 
 procedure TfrmListeCompositions.PhotoClic(Sender: TObject);
+var
+  img: timage;
+  ShareSheetSvc: IFMXShareSheetActionsService;
 begin
   if Sender is timage then
-    url_Open_In_Browser((Sender as timage).TagString);
-  // Add share sheet action depending if it's available or not
+    img := Sender as timage
+  else
+    img := nil;
+  if assigned(img) then
+    if SupportsPlatformService(IFMXShareSheetActionsService, ShareSheetSvc) then
+      ShareSheetSvc.share(nil, '#MyDayInPictures', img.bitmap)
+    else
+      url_Open_In_Browser(img.TagString);
 end;
 
 procedure TfrmListeCompositions.VertScrollBox1ViewportPositionChange
