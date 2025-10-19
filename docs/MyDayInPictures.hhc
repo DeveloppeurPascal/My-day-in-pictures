@@ -1,0 +1,391 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD>
+<BODY>
+    <OBJECT type="text/site properties">
+      <param name="Window Styles" value="0x800227">
+    </OBJECT>
+    <UL>      <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="MyDayInPictures">
+          <param name="Local" value="MyDayInPictures.html">
+          </OBJECT>
+          <UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="UUtils">
+                  <param name="Local" value="UUtils.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Routines">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="EnChiffres">
+                                  <param name="Local" value="UUtils.EnChiffres.html">
+                                  </OBJECT>
+                          </UL>
+                  </UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="fAjoutCompo">
+                  <param name="Local" value="fAjoutCompo.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Classes">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TfrmAjoutCompo">
+                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Constructors">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Destroy">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.Destroy.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="TakePhotoFromLibraryAction1DidFinishTaking">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.TakePhotoFromLibraryAction1DidFinishTaking.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAjoutPhotoClick">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnAjoutPhotoClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnBackClick">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnBackClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnEnregistrerClick">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnEnregistrerClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnRetraitPhotoClick">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnRetraitPhotoClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="execute">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.execute.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Fields">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ActionList1">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.ActionList1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ImageFinale">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.ImageFinale.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Layout1">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.Layout1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="OpenDialog1">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.OpenDialog1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="TakePhotoFromLibraryAction1">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.TakePhotoFromLibraryAction1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="background">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.background.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAjoutPhoto">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnAjoutPhoto.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAjoutPhotoImg">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnAjoutPhotoImg.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnBack">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnBack.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnBackImg">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnBackImg.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnEnregistrer">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnEnregistrer.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnEnregistrerImg">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnEnregistrerImg.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnRetraitPhoto">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnRetraitPhoto.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnRetraitPhotoImg">
+                                                  <param name="Local" value="fAjoutCompo.TfrmAjoutCompo.btnRetraitPhotoImg.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                          </UL>
+                  </UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="fListeCompositions">
+                  <param name="Local" value="fListeCompositions.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Classes">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TfrmListeCompositions">
+                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="OlfAboutDialog1URLClick">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.OlfAboutDialog1URLClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="VertScrollBox1ViewportPositionChange">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.VertScrollBox1ViewportPositionChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ajoutePhoto">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.ajoutePhoto.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAboutClick">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.btnAboutClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAddCompoClick">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.btnAddCompoClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="chargePhotosSuivantes">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.chargePhotosSuivantes.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="execute">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.execute.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="initialiseListe">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.initialiseListe.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Fields">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="OlfAboutDialog1">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.OlfAboutDialog1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ToolBar1">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.ToolBar1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="VertScrollBox1">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.VertScrollBox1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="background">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.background.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAbout">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.btnAbout.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAddCompo">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.btnAddCompo.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAddCompoImg">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.btnAddCompoImg.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="grille">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.grille.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="infoChargementSuite">
+                                                  <param name="Local" value="fListeCompositions.TfrmListeCompositions.infoChargementSuite.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                          </UL>
+                  </UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="fMain">
+                  <param name="Local" value="fMain.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Classes">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TfrmMain">
+                                  <param name="Local" value="fMain.TfrmMain.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FormShow">
+                                                  <param name="Local" value="fMain.TfrmMain.FormShow.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Variables">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="frmMain">
+                                  <param name="Local" value="fMain.frmMain.html">
+                                  </OBJECT>
+                          </UL>
+                  </UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="uConfig">
+                  <param name="Local" value="uConfig.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Constants">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CExtensionFichier1">
+                                  <param name="Local" value="uConfig.CExtensionFichier1.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CExtensionFichier2">
+                                  <param name="Local" value="uConfig.CExtensionFichier2.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CExtensionFichierFinal">
+                                  <param name="Local" value="uConfig.CExtensionFichierFinal.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CHauteur">
+                                  <param name="Local" value="uConfig.CHauteur.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CLargeur">
+                                  <param name="Local" value="uConfig.CLargeur.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CNomFichier">
+                                  <param name="Local" value="uConfig.CNomFichier.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="CNombreModeles">
+                                  <param name="Local" value="uConfig.CNombreModeles.html">
+                                  </OBJECT>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Routines">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="getComposPath">
+                                  <param name="Local" value="uConfig.getComposPath.html">
+                                  </OBJECT>
+                          </UL>
+                  </UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="uSVG">
+                  <param name="Local" value="uSVG.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Constants">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_ArrowLeft">
+                                  <param name="Local" value="uSVG.SVG_ArrowLeft.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_Cancel">
+                                  <param name="Local" value="uSVG.SVG_Cancel.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_Check">
+                                  <param name="Local" value="uSVG.SVG_Check.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_Delete">
+                                  <param name="Local" value="uSVG.SVG_Delete.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_DeleteForever">
+                                  <param name="Local" value="uSVG.SVG_DeleteForever.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_ImageMultiple">
+                                  <param name="Local" value="uSVG.SVG_ImageMultiple.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_Information">
+                                  <param name="Local" value="uSVG.SVG_Information.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_LibraryPlus">
+                                  <param name="Local" value="uSVG.SVG_LibraryPlus.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_MinusCircleOutline">
+                                  <param name="Local" value="uSVG.SVG_MinusCircleOutline.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_PlusCircle">
+                                  <param name="Local" value="uSVG.SVG_PlusCircle.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_PlusCircleOutline">
+                                  <param name="Local" value="uSVG.SVG_PlusCircleOutline.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_Save">
+                                  <param name="Local" value="uSVG.SVG_Save.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="SVG_Share">
+                                  <param name="Local" value="uSVG.SVG_Share.html">
+                                  </OBJECT>
+                          </UL>
+                  </UL>
+          </UL>
+    </UL>
+</BODY>
+</HTML>
